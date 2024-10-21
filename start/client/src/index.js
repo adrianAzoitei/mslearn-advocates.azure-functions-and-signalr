@@ -23,7 +23,7 @@ const app = new Vue({
                 const url = `${getApiUrl()}/api/getStocks`;
                 console.log('Fetching stocks from ', url);
 
-                const response = await fetch(url);
+                const response = await fetch(url, { mode: 'no-cors' });
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
